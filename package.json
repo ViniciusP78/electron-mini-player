@@ -1,0 +1,23 @@
+{
+  "name": "electron-mini-player",
+  "version": "1.0.0",
+  "description": "A simple player for testing the electron framework",
+  "main": "app/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViniciusP78/electron-mini-player.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ViniciusP78/electron-mini-player/issues"
+  },
+  "homepage": "https://github.com/ViniciusP78/electron-mini-player#readme",
+  "devDependencies": {
+    "electron": "^10.0.0"
+  }
+}
