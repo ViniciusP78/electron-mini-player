@@ -4,8 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mini Player</title>
+  <link rel="stylesheet" href="./index.css"/>
+  <script type="text/javascript">
+    const readFile = (event) => {
+      const musicArea = document.getElementById("music-area");
+      const audioTag = document.createElement("audio");
+      audioTag.setAttribute("controls", true);
+      audioTag.setAttribute("src", event.target.files[0].path);
+      musicArea.appendChild(audioTag);
+    }
+  </script>
 </head>
 <body>
-  <h1>Hello Mini-Player</h1>
+  <header>
+    <h2>Mini-Player</h2>
+    <p>Um player player leve e elegante</p>
+  </header>
+  
+  <input type="file" id="musicInput" onchange="readFile(event)" />
+  
+  <div id="music-area">
+      <button type="button">
+        <label for="musicInput">
+          Selecionar música
+        </label>
+      </button>
+  </div>
+  
 </body>
 </html>
