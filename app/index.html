@@ -5,15 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mini Player</title>
   <link rel="stylesheet" href="./index.css"/>
-  <script type="text/javascript">
-    const readFile = (event) => {
-      const musicArea = document.getElementById("music-area");
-      const audioTag = document.createElement("audio");
-      audioTag.setAttribute("controls", true);
-      audioTag.setAttribute("src", event.target.files[0].path);
-      musicArea.appendChild(audioTag);
-    }
-  </script>
 </head>
 <body>
   <header>
@@ -21,15 +12,24 @@
     <p>Um player player leve e elegante</p>
   </header>
   
-  <input type="file" id="musicInput" onchange="readFile(event)" />
+  
   
   <div id="music-area">
-      <button type="button">
+      <button id="open-track" type="button">
         <label for="musicInput">
           Selecionar música
         </label>
       </button>
+      <button id="play-track" type="button">
+        <label for="musicInput">
+          Tocar Música
+        </label>
+      </button>
   </div>
-  
+
+  <script>
+    require('./renderer');
+  </script>
+
 </body>
 </html>
