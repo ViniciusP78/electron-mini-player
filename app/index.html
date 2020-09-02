@@ -7,14 +7,28 @@
   <link rel="stylesheet" href="./index.css"/>
 </head>
 <body>
-  <header>
-    <h2>Mini-Player</h2>
-    <p>Um player player leve e elegante</p>
-  </header>
   
+  <div id="cover-art">
+    
+  </div>
+
+  <div id="metadata">
+    <h2 id="track-title">Music Title</h1>
+    <h3 id="track-album">Album</h2>
+  </div>
+
+  <div id="playback">
+    <img id="previous" src="svgs/fast-forward.svg" alt="Quit">
+    <img id="play" src="svgs/play-circle.svg" alt="Play">
+    <img id="next" src="svgs/fast-forward.svg" alt="Next">
+    <img id="open-track" src="svgs/folder.svg" alt="Folder">
+  </div>
+
+  <button id="quit">
+    <img src="svgs/x.svg" alt="Quit">
+  </button>
   
-  
-  <div id="music-area">
+  <!-- <div id="music-area">
       <button id="open-track" type="button">
         <label for="musicInput">
           Selecionar música
@@ -25,7 +39,7 @@
           Tocar Música
         </label>
       </button>
-  </div>
+  </div> -->
 
   <script>
     require('./renderer');

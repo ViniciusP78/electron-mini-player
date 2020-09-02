@@ -7,12 +7,17 @@ app.on('ready', () => {
     show: false,
     webPreferences: {
       nodeIntegration: true
-    }
+    },
+    width:600,
+    height:100,
+    resizable: false,
+    frame: false,
+    transparent: true
   });
 
   mainWindow.loadFile(`${__dirname}/index.html`);
 
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 
   mainWindow.once('ready-to-show', () => {
     mainWindow.show();
@@ -39,4 +44,8 @@ OpenTrackFromUser = () => {
 ipcMain.handle('open-track', (event, args) => {
   const trackURI = OpenTrackFromUser();
   return trackURI;
+})
+
+ipcMain.on('quit', (event) => {
+  app.quit();
 })

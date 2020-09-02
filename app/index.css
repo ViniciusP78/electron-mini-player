@@ -3,43 +3,68 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: "OpenSans";
+  src: url("fonts/OpenSans-Regular.ttf");
+}
+
 body, html {
   width: 100%;
   height: 100%;
+  -webkit-app-region: drag;
+
+  display: flex;
+  align-items: center;
+  font-family: "OpenSans";
 }
+
+button {
+  -webkit-app-region: no-drag;
+}
+
+
 
 body {
-  background-color: rgb(0, 50, 73);
-  padding: 48px;
+  background-color: rgba(17, 17, 17, 0.8);
   color: white;
 }
 
-header {
-  text-align: center;
-}
-header > p {
-  margin: 16px 0px;
-}
-
-input { display: none; }
-
-#music-area {
-  margin-top: 16px;
+#cover-art {
+  height: 100px;
+  width: 100px;
+  border: 1px solid rgb(61, 180, 115);
 }
 
-#music-area button {
-  background: rgb(61, 180, 115);
-  width: 100%;
-  padding: 8px;
-  border-radius: 4px;
-  border:none;
-
-  color: white;
-  font-weight: bold;
-
-  cursor: pointer;
+#cover-art img {
+  width:100%;
+  height: 100%;
 }
 
-#music-area button:focus {
-  outline: none;
+#playback {
+  margin: auto;
+  -webkit-app-region: no-drag;
+}
+
+#playback img {
+  filter: invert(100%);
+}
+
+#previous {
+  transform: scaleX(-1);
+  
+}
+
+#quit {
+  margin-left: auto;
+  background-color: #eb4949;
+  border: none;
+  height:75px;
+}
+
+#quit svg {
+  fill: white;
+}
+
+#metadata {
+  margin-left:25px;
 }
