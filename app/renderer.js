@@ -4,6 +4,8 @@ const mm = require('music-metadata');
 
 var track;
 
+var player;
+
 const coverContainer = document.querySelector('#cover-art');
 
 const trackTitle = document.querySelector('#track-title');
@@ -27,7 +29,12 @@ openTrackButton.addEventListener('click', async () => {
 })
 
 playTrackButton.addEventListener('click', () => { // Não apertar mais de uma vez
-  var player = new Howl({
+
+  if(player) {
+    player.stop();
+  }
+
+  player = new Howl({
     src: [track]
   });
 
@@ -43,6 +50,7 @@ playTrackButton.addEventListener('click', () => { // Não apertar mais de uma ve
       trackCover.src = `data:${picture.format};base64,${picture.data.toString('base64')}`;
       trackCover.width = "300";
       trackCover.height = "300";
+      coverContainer.innerHTML = "";
       coverContainer.appendChild(trackCover);
 
       trackTitle.innerHTML = metadata.common.title;

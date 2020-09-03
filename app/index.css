@@ -4,8 +4,8 @@
 }
 
 @font-face {
-  font-family: "OpenSans";
-  src: url("fonts/OpenSans-Regular.ttf");
+  font-family: "Titillium";
+  src: url("fonts/TitilliumWeb-ExtraLight.ttf");
 }
 
 body, html {
@@ -14,25 +14,63 @@ body, html {
   -webkit-app-region: drag;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
-  font-family: "OpenSans";
+  font-family: "Titillium";
 }
+
 
 button {
   -webkit-app-region: no-drag;
+  outline: none;
 }
 
-
-
 body {
-  background-color: rgba(17, 17, 17, 0.8);
+  background-color: rgba(17, 17, 17, 0.9);
   color: white;
 }
 
+#quit {
+  position: absolute;
+  background-color: rgba(17, 17, 17, 0.0);
+  right: 0px;
+  border: none;
+  height:40px;
+  width:50px;
+}
+
+#quit img {
+  /* Gambiarra para inverter cor do svg */
+  filter: invert(100%);
+}
+
+#quit:hover {
+  background-color: #d62424;
+}
+
+#minimize {
+  position: absolute;
+  right: 50px;
+  background-color: rgba(17, 17, 17, 0.0);
+  border: none;
+  height:40px;
+  width:50px;
+}
+
+#minimize img {
+  /* Gambiarra para inverter cor do svg */
+  filter: invert(100%);
+}
+
+#minimize:hover {
+  background-color: rgb(61, 180, 115);
+}
+
 #cover-art {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
   border: 1px solid rgb(61, 180, 115);
+  margin-top: 50px;
 }
 
 #cover-art img {
@@ -41,7 +79,7 @@ body {
 }
 
 #playback {
-  margin: auto;
+  margin-top: 20px;
   -webkit-app-region: no-drag;
 }
 
@@ -54,17 +92,23 @@ body {
   
 }
 
-#quit {
-  margin-left: auto;
-  background-color: #eb4949;
-  border: none;
-  height:75px;
-}
-
-#quit svg {
-  fill: white;
-}
-
 #metadata {
-  margin-left:25px;
+  margin-top: 5px
+}
+
+.folder {
+  margin-top: auto;
+  margin-bottom: 10px;
+  color:white;
+  background-color: rgba(17, 17, 17, 0.0);
+  border: 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.folder img {
+  /* Gambiarra para inverter cor do svg */
+  filter: invert(100%);
+  margin-right:5px;
 }
